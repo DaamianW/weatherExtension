@@ -1,15 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import './popup.css'
 
-const App: React.FC<{}> = () => {
-  return (
-    <div>
-      <img src="icon.png" />
-    </div>
-  )
+const App: React.FC = () => {
+	return (
+		<div>
+			<img src="icon.png" alt="Icon" />
+		</div>
+	)
 }
 
 const root = document.createElement('div')
 document.body.appendChild(root)
-ReactDOM.render(<App />, root)
+const reactRoot = createRoot(root)
+reactRoot.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+)
